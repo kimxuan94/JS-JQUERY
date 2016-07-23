@@ -1,0 +1,43 @@
+.calculator {
+	border: solid 0.5px gray;
+
+/*	display: flex;
+	flex-direction: column;*/
+	width: 500px;
+	height: 500px;
+}
+
+td {
+	border: solid 0.5px gray;
+
+	width: 30px;
+/*	width: 50px;
+	height: 50px;*/
+}
+
+tr {
+	height: 50px;
+}
+/*
+.col-sm-4 {
+	border: solid;
+	height: 50px;
+}*/
+
+.bo {
+	width: 10px;
+} 
+
+.table {
+    width: 38%!important;
+    /* height: 36%; */
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+#screen {
+    border: solid 0.5px gray;
+    width: 435px;
+    height: 60px;
+    margin-top: 41px;
+}

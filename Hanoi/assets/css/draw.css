@@ -1,0 +1,11 @@
+#drawbox {
+	float: left;
+	 border: solid 1px gray;
+    width: 600px!important;
+    height: 500px!important;
+    margin-top: 74px;
+}
+
+ul li {
+	list-style: none;
+} 

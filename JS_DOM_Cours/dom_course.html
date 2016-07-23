@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>Cours JavaScript - DOM</title>
+      </head>
+      <body>
+                  <script type="text/javascript">
+                        //Récupérer des éléments grâce à leur class
+                        var elem1 = document.getElementsByClassName('nom_de_classe');
+
+                        //Récupérer UN élément grâce à son id
+                        var elem2 = document.getElementByID('ID');
+
+                        //les getElement ou getElements renvoient des noeuds (ou des tableaux de noeuds), il est donc possible de chainer les requêtes
+                        var elem3 = document.getElementById('ID').getElements.className("class");
+
+                        //Plus facile de récuperer avec un selecteur css
+                        var elem4 = document.querySelectorAll("p") //va récupérer tous les paragraphes
+
+                        //Pour résumer
+                        // getElementsByTagName  par balise, plusieurs éléments renvoyés
+                        // getElementsByClassName par nom de classe, plusieurs éléments renvoyés
+                        // getElementById par ID, un seul élément
+                        // querySelectorAll par selecteur CSS, plusieurs éléments renvoyés
+                        // querySelector par selecteur CSS, un seul (le premier)
+
+
+                        //Pour récupérer le texte d'un élement l'attribut : textContent
+                        var texte = elem2.textContent;
+
+                        //Pour récupérer un attribut : la méthode getAttribute, pour vérifier la présence hasAttribute
+                        var attribut = elem2.getAttribute('href');
+
+                        //href, id, et value, directement accessible par attribut
+
+                        //Pour récupérer la liste des classes d'un élément : et pour tester, méthode contains
+                        var classes = elem2.classList;
+
+                        //pour modifier du contenu
+                        elem2.textContent = 'Bonjour';
+
+                        //pour modifier le code html
+                        elem2.innerHTML = "<ul><li>test</li></ul>";
+
+                        //pour modifier les attributs
+                        elem2.setAttribute('id', 'titre');
+
+                        //pour les classes
+                        elem2.add('class2');
+                        elem2.remove('class2');
+
+                        //Pour créer un nouvel élément 3 étapes :
+                        //   - Création de l'élement
+                        //   - Définition des informations de l'élément
+                        //   - Insertion du nouvel élément dans le document
+
+                        //Etape 1
+                        var newElem = document.createElement('li');
+                        //Etape 2
+                        newElem.id = 'new_elem';
+                        newElem.textContent = 'Nouvel élément';
+                        //Etape 3
+                        document.getByTagName('ul')[0].appendChild(newElem);
+
+                        //Si on veut y rajouter du texte
+                        newElem.appendChild(document.createTexteNode('Nouvel élément !'));
+
+                        //ajouter un élément avec un autre noeuds
+                        var newElem2 = document.createElement('li');
+                        newElem2.id = 'elem2';
+                        newElem2.textContent = 'elem2 !';
+                        document.getByTagName('ul')[0].insertBefore(newElem2, elem2);
+
+                        //remplacer un noeud existant : méthode replaceChild (fonctionne comme insertBefore)
+
+                        //supprimer un noeud removeChild(nom_a_supprimer)
+
+
+
+                        //Les évenements
+                        function aFaireLorsDunClic(event){
+                              //todo
+                        }
+
+                        var bouton = document.getElementById('bouton');
+
+                        bouton.addEventListener('click', aFaireLorsDunClic);
+                        // différents type d'évenements : click, keyup, keydown, keypress
+
+
+                        //en général, avant d'exécuter du code javascript, on attend que la page soit chargée
+                        window.addEventListener("load", function(){
+                              console.log('Page chargée');
+                        })
+
+                        //évenement beforeunload intéressant avant fermeture de page
+
+                        //lors d'un événement, un objet event est passé en paramètre au callback
+                        // il a alors des propriétés telles que event.target qui permettent d'avoir accès à l'élément du DOM qui a déclenché l'évenement
+
+                  </script>
+      </body>
+</html>

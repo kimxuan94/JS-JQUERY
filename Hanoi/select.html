@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>Select list tp</title>
+            <link rel="stylesheet" type="text/css" href="assets/css/horloge.css">
+             <meta name="viewport" content="width=device-width, initial-scale=1">
+             <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+             <!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+            </head>
+            <body>
+              <div class="container">
+                  <select id="box">
+                    <option value="sel" class="depart">Sélectionnez une option</option>
+                    <option value="1">Pomme</option>
+                    <option value="2">Poire</option>
+                    <option value="3">Patate</option>
+                    <option value="4">Ananas</option>
+                  </select>
+              </div>
+           </body>
+          <script type="text/javascript">
+
+              //On se place dans la select box
+              var boiteChoix = document.querySelector('select#box');
+              var groupeOpt = document.getElementsByTagName('option');
+
+              var active = false;
+
+              function changeChoix(event){
+                // console.log(event);
+                // var listeChoix = document.getElementsByTagName('option');
+
+                  // console.log(boiteChoix);
+
+                  //On récupère les tag options de la select box
+                  // var groupeOpt = document.getElementsByTagName('option');
+                  console.log(groupeOpt);
+
+                  //On change la structure des options
+                  var newEl = boiteChoix.class='custom';
+                  // boiteChoix.style.width="100%";
+                  // boiteChoix.style.height="34px";
+                  // boiteChoix.style.background="#0EFF91";
+                  // boiteChoix.style.borderRadius="4px";
+
+                  //test changement noeud html
+                  // boiteChoix.innerHTML = "</div><select></select></div>";
+
+                // listeChoix = "<div></div>";
+                // listeChoix[0].style.display="bloc";
+                if(groupeOpt.value == "sel"){
+                  cacherDepart();
+                }
+              }
+              groupeOpt[1].addEventListener("change", changeChoix);
+              boiteChoix.addEventListener("click", changeChoix);
+
+              function cacherDepart(event){
+                if(groupeOpt[0].value == "sel"){
+                  console.log("depart");
+                }
+              }
+
+              groupeOpt[1].addEventListener("click", cacherDepart);
+           </script>
+</html>

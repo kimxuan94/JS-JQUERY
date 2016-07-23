@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>FloodFill</title>
+      </head>
+      <body>
+
+            <script type="text/javascript">
+                  var tableau = [
+                        [0, 0, 0, 1, 1, 1, 0, 1, 0],
+                        [0, 0, 0, 1, 0, 1, 0, 1, 0],
+                        [0, 0, 0, 1, 0, 1, 0, 0, 0],
+                        [0, 0, 0, 1, 0, 1, 0, 0, 0],
+                        [0, 0, 0, 1, 0, 1, 0, 1, 0],
+                        [0, 0, 0, 1, 1, 1, 0, 1, 1],
+                  ];
+
+                  var tableauTampon =[];
+                  for(i = 0; i<tableau.length; i++){
+                        tableauTampon[i] = [];
+                        for(j = 0; j<tableau[0].length; j++){
+                              tableauTampon[i][j] = 0;
+                        }
+                  }
+                  var count =0;
+                  function FloodCount(tableau, X, Y, memoire){
+                        if(tableau[X][Y] != 0 && X >= 0 && Y >= 0 && X < tableau.length && Y < tableau[0].length){
+                              count++;
+
+                              memoire[X][Y] = 1;
+
+                              haut = X - 1;
+                              bas = Y + 1;
+                              gauche = Y - 1;
+                              droite = X + 1;
+
+                              FloodCount(tableau, X, haut);
+                              FloodCount(tableau, X, bas);
+                              FloodCount(tableau, gauche, Y);
+                              FloodCount(tableau, droite, Y);
+                        }
+                  }
+
+                  FloodCount(tableau, 0, 3);
+
+                  console.log(count);
+            </script>
+      </body>
+</html>

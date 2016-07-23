@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>Galerie tp</title>
+            <link rel="stylesheet" type="text/css" href="assets/css/galery.css">
+             <meta name="viewport" content="width=device-width, initial-scale=1">
+  			<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  			<!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+      </head>
+      <body>
+
+        <div class="container" id="ici">
+        <!--   <div class="row">
+            <img src="http://placehold.it/600x498">
+           </div> -->
+
+
+        </div>
+          <div class="visu">
+            <div class="row">
+              <!-- <div class="col-md-4"><img src="http://placehold.it/350x150">
+</div>
+              <div class="col-md-4"><img src="http://placehold.it/350x150">
+</div>
+              <div class="col-md-4"><img src="http://placehold.it/350x150">
+</div> -->
+              <ul>
+                <li><img src="http://img.dummy-image-generator.com/abstract/dummy-150x150-RedDots.jpg" class="one"></li>
+                <li><img src="http://img.dummy-image-generator.com/abstract/dummy-150x150-Floral.jpg" class="two"></li>
+                <li><img src="http://img.dummy-image-generator.com/abstract/dummy-150x150-Stones.jpg" class="tree"></li>
+                <li><img src="http://img.dummy-image-generator.com/abstract/dummy-150x150-Circus.jpg" class="four"></li>
+              </ul>
+            </div>
+          </div>
+      </body>
+      <script type="text/javascript">
+        // var rendu = document.getElementsByClassName('container');
+
+        var listImg = document.getElementsByTagName('li');
+          console.log(listImg);
+
+        var imgs = document.querySelectorAll('img');
+        var classes = imgs.classList;
+          console.log(imgs);
+        function displayImg(event) {
+          console.log("In display area");
+
+          // var imgbloc = document.getElementsByClassName('row');
+          // console.log(imgbloc.firstChild.nodeName);
+
+          // var newImg = document.createElement('img');
+          // newImg.class = 'myimg';
+
+          // Récupère l'image depuis la liste d'images
+          var getImg = document.getElementsByClassName('myimg');
+
+          // var elem = document.getElementsByTagName('img')
+
+          var images = document.getElementsByTagName('img')[0];
+          // var sourceImg = images.src;
+          var sourceImg = images.getAttribute('src');
+          console.log(sourceImg);
+
+          //Maintenant on ajoute l'élément
+          var newEl = document.createElement('img');
+          newEl.class = images.class;
+          newEl.src = images.src; //Ajoute attribut src depuis la liste d'images
+          // newEl = sourceImg;
+          var test = document.getElementsByClassName('container');
+          test[0].appendChild(newEl);
+
+          test[0].style.display="grid";
+          //console.log(newEl);
+
+          //Associer le src de l'élément image depuis la liste
+          // document["el2"].src = newEl;
+          // var newSrc = document.createElement('src');
+          // newSrc.src = sourceImg;
+          // console.log('newSrc');
+
+
+        }
+
+        for(var i = 0; i < listImg.length; i++) {
+          listImg[i].addEventListener("click", displayImg);
+        }
+      </script>
+</html>

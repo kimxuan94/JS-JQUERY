@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>Time tp</title>
+            <link rel="stylesheet" type="text/css" href="assets/css/horloge.css">
+             <meta name="viewport" content="width=device-width, initial-scale=1">
+  			<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  			<!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+      </head>
+      <body>
+      		<div id="cadran">
+            <img class="aiguille" id="aigS" src="aigsec.png" alt="aiguille des secondes" style="left: 283px"; />
+            <img class="aiguille" id="aigM" src="aigmin.png" alt="aiguille des minutes" style="left: 278px;" ;/>
+            <img class="aiguille" id="aigH" src="aigheur.png" alt="aiguille des heures" style="left: 278px;"; />
+      		</div>
+      </body>
+      <script type="text/javascript">
+        //Vérifie si l'horloge existe
+        var cadre = document.getElementById("cadran");
+        // var aig = document.getElementsByTagName('img');
+        // console.log(aig);
+
+        //Initialise lheure
+        var d    = new Date();
+        var time = d.getSeconds() + 60 * d.getMinutes() + 3600 * d.getHours();
+
+        var intervalletest;
+
+        //Récupère les images
+        var aig = document.getElementsByTagName('img')[0];
+        console.log(aig);
+
+        //Récupère les elements du cadran
+        function getAiguilles(event){
+        for(var i=0; i<cadre.length; i++){
+          // var aiguilles = document.getElementsByClassName[i]('aiguille');
+          // console.log(aiguilles);
+          console.log(event);
+          //Dérouler le noeud d'images par class
+          aig[i].addEventListener("click", getAiguilles);
+         }
+        }
+        function setSecond(event){
+          // console.log("In second area");
+
+          //Test récupèration des aiguilles par leur id
+          var aigSec = document.getElementById('aigS');
+          var aigMin = document.getElementById('aigM');
+          var aigHeures = document.getElementById('aigH');
+
+          //Test mouvement une aiguille
+          aigS.style.MozTransform    = 'rotate(' + (time * 6) + 'deg)';
+          aigS.style.WebkitTransform = 'rotate(' + (time * 6) + 'deg)';
+          aigS.style.OTransform      = 'rotate(' + (time * 6) + 'deg)';
+          aigS.style.msTransform     = 'rotate(' + (time * 6) + 'deg)';
+          aigS.style.transform       = 'rotate(' + (time * 6) + 'deg)';
+          aigM.style.MozTransform    = 'rotate(' + Math.round(time / 10) + 'deg)';
+          aigM.style.WebkitTransform = 'rotate(' + Math.round(time / 10) + 'deg)';
+          aigM.style.OTransform      = 'rotate(' + Math.round(time / 10) + 'deg)';
+          aigM.style.msTransform     = 'rotate(' + Math.round(time / 10) + 'deg)';
+          aigM.style.transform       = 'rotate(' + Math.round(time / 10) + 'deg)';
+          aigH.style.MozTransform    = 'rotate(' + Math.round(time / 120) + 'deg)';
+          aigH.style.WebkitTransform = 'rotate(' + Math.round(time / 120) + 'deg)';
+          aigH.style.OTransform      = 'rotate(' + Math.round(time / 120) + 'deg)';
+          aigH.style.msTransform     = 'rotate(' + Math.round(time / 120) + 'deg)';
+          aigH.style.transform       = 'rotate(' + Math.round(time / 120) + 'deg)';
+          //On applique un intervalle pour le mouvement de l'aiguille
+
+          aigSec.addEventListener("click", setSecond);
+
+        }
+
+        cadre.addEventListener("click", setSecond);
+      </script>
+</html>

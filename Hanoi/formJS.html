@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>Formulaire JS tp</title>
+            <link rel="stylesheet" type="text/css" href="assets/css/horloge.css">
+             <meta name="viewport" content="width=device-width, initial-scale=1">
+             <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+             <!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+            </head>
+            <body>
+              <div class="container">
+                <div class="page-header">
+                    <h1>Formulaire d'inscription</h1>
+                </div>
+                <form class="form">
+                  <div class="form-group">
+                    <label for="nom">Nom:</label>
+                    <input type="text" class="form-control" id="nom">
+                  </div>
+                  <div class="form-group">
+                    <label for="prenom">Prénom:</label>
+                    <input type="text" class="form-control" id="prenom">
+                  </div>
+                  <div class="form-group">
+                    <label for="pseudo">Pseudo:</label>
+                    <input type="text" class="form-control" id="pseudo">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="codep">Code postal:</label>
+                    <input type="text" class="form-control" id="codep">
+                  </div>
+                  <div class="form-group">
+                    <label for="ville">Ville:</label>
+                    <input type="text" class="form-control" id="ville">
+                  </div>
+                  <button type="submit" class="btn btn-default" value="Envoyer">Envoyer</button>
+                </form>
+              </div>
+            </body>
+            <script type="text/javascript">
+            /*Controle formulaire
+            * 1 => Checker si la valeur de l'input est NULL
+            * 2 => Checker changement de l'input + appliquer la fonction IsEmpty
+            * 3 => Déclarer les regex pour chaque input + appliquer avec la fonction controlForm
+            * 4 => Contrôle global + envoi
+            */
+
+            var formulaire = document.getElementsByTagName('input');
+              console.log(formulaire);
+
+            var nom = document.getElementById('nom');
+
+            function IsEmpty(event){
+              if(nom.value == ''){
+                alert('ce champs est vide');
+              }
+              else{
+                // var errM = nom.appendChild(createTexteNode('Nom valide'));
+                var errM = document.createElement('p');
+                errM.appendChild(document.createTexteNode('Nouvel élément !'));
+                errM.style.color="red";              // nom.appendChild(errM);
+                nom.parentNode.insertBefore(errM, nom.nextSibling);
+                console.log(errM);
+              }
+              }
+            formulaire[0].addEventListener("click", IsEmpty);
+            // newElem.appendChild(document.createTexteNode('Nouvel élément !'));
+
+            function controlForm(event){
+
+            }
+
+
+            </script>
+</html>

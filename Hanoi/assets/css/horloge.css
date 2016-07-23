@@ -1,0 +1,23 @@
+#cadran {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    border: solid 1px black;
+    margin-left: 94px;
+    margin-top: 105px;
+    background: url('http://sdz.tdct.org/sdz/medias/uploads.siteduzero.com_files_163001_164000_163059.png');
+    background-size: contain;
+}
+
+.aiguille {
+    position: absolute;
+    bottom: 283px;
+    -moz-transform-origin: bottom center;
+    -webkit-transform-origin: bottom center;
+    -o-transform-origin: bottom center;
+    -ms-transform-origin: bottom center;
+    transform-origin: bottom center;
+    top: 160px;
+    margin-left: -85px;
+}

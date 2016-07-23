@@ -1,0 +1,32 @@
+.container{
+    border: solid 1px gray;
+    width: 600px!important;
+    height: 500px!important;
+}
+
+.visu{
+    border: solid 1px gray;
+    width: 500px;
+    height: 150px;
+    margin: auto;
+}
+
+.col-md-4{
+/*	border: solid 1px;
+*/	width: 30px;
+	height: 150px;
+	overflow: hidden;
+}
+
+img {
+/*	padding-left: 10px;
+*/
+border-right: solid 1px black;}
+
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+    display: flex;
+    margin-left: -76px;
+    list-style: none;
+}

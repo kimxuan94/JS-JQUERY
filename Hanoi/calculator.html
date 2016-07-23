@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>FloodFill</title>
+            <link rel="stylesheet" type="text/css" href="assets/css/calc.css">
+             <meta name="viewport" content="width=device-width, initial-scale=1">
+  			<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+ 			 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  			<!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+  			<script src="assets/js/systab.js"></script>
+      </head>
+      <body>
+
+      		<div class="container">
+
+      		<h1>Tab System</h1>
+
+
+      		<ul class="nav nav-tabs">
+  				<li role="presentation" class="test"><a href="#">Tab 1</a></li>
+  				<li role="presentation" class="test2"><a href="#">Tab 2</a></li>
+  				<li role="presentation" class="test3"><a href="#">Tab 3</a></li>
+			</ul>
+
+			<div class="panel panel-default">
+  				<div class="panel-body" id="test">
+   					<p>blablablaba</p>
+  				</div>
+			</div>
+
+			<h1>Calculator</h1>
+
+      			<div id="screen"><span id="init">0</span></div> 
+
+      			<!-- <div class ="buttons">
+      				DEPART
+      			</div> -->
+      			<table class="table">
+      				<thead>
+      					<tr>
+<!-- 						<div class="screen"></div>      						
+ -->      					</tr>
+      				</thead>
+
+      					<tbody>
+<!--       						<div class="col-sm-4">
+ -->    
+<!--       						</div>
+ -->      					
+ 							<tr class="bo">
+      						<td class="col-sm-2" id="on"><button>AC</button></td>
+      						<td class="col-sm-2"><button>+/-</button></td>
+      						<td class="col-sm-2"><button>%</button></td>
+      						<td class="col-sm-2"><button>/</button></td>
+      					</tr>
+      					<tr class="bo">
+
+      						<td class="col-sm-2"><button>7</button></td>
+      						<td class="col-sm-2"><button>8</button></td>
+      						<td class="col-sm-2"><button>9</button></td>
+      						<td class="col-sm-2"><button>*</button></td>
+      					</tr>
+      					 <tr class="bo">
+
+      						<td class="col-sm-2"><button>4</button></td>
+      						<td class="col-sm-2"><button>5</button></td>
+      						<td class="col-sm-2"><button>6</button></td>
+      						<td class="col-sm-2"><button>-</button></td>
+      					</tr>
+      					<tr class="bo">
+      						<td class="col-sm-2"><button>1</button></td>
+      						<td class="col-sm-2"><button>2</button></td>
+      						<td class="col-sm-2"><button>3</button></td>
+      						<td class="col-sm-2"><button>+</button></td>
+      					</tr>
+      					 <tr class="bo">
+      						<td class="col-sm-2"><button>0</button></td>
+      						<td class="col-sm-2"><button>.</button></td>
+      						<td class="col-sm-2"><button>=</button></td>
+      						<td class="col-sm-2"></td>
+      					</tr>
+      			</tbody>
+      			</table>
+      		</div>
+      		<script type="text/javascript">
+//     document.getElementById("on").onclick = TypeIn;
+    
+//     function TypeIn() {
+      // var box1 = document.createElement("span");
+      // box1.setAttribute("id", "valor");
+      // // screen.style.background="green";
+
+      // var box1_content = document.createTextNode("Calculator is ON");
+      // box1.appendChild(box1_content);
+
+      // var box2 = document.getElementById('init');
+      // var x = box2.parentNode;
+      // x.style.background="#0EFF91";
+
+
+//       x.replaceChild(box1, box2);
+
+// }
+
+	//Turn on calculator
+	var bouton = document.getElementById('on');
+	console.log(bouton);
+
+	function turnON(event){
+		console.log('Calculator init')
+
+		// var ecran = document.getElementById('screen');
+		// ecran.style.background="#0EFF91";
+
+		var box1 = document.createElement("span");
+      	box1.setAttribute("id", "valor");
+
+      	var box1_content = document.createTextNode("Calculator is ON");
+      	box1.appendChild(box1_content);
+
+      	var box2 = document.getElementById('init');
+      	var x = box2.parentNode;
+     	x.style.background="#0EFF91";
+
+       	x.replaceChild(box1, box2);
+	}
+
+	bouton.addEventListener("click", turnON);
+
+	//Shut off calculator
+	function shutOFF(event){
+		console.log('Calculator shutting down');
+		var keep = document.getElementById('screen');
+		var del = document.getElementsByTagName('span')[0];
+		var old = keep.removeChild(del);
+
+		keep.style.background="whitesmoke";
+	}
+
+	bouton.addEventListener("dblclick", shutOFF);
+
+      	</script>
+      </body>
+</html>

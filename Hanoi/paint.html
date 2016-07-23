@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>Paint tp</title>
+            <link rel="stylesheet" type="text/css" href="assets/css/draw.css">
+             <meta name="viewport" content="width=device-width, initial-scale=1">
+  			<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  			<!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+      </head>
+      <body>
+      	<ul>
+      		<li><div class="form-group">
+  				<label for="sel1">Taille:</label>
+  				<select class="form-control-sm" id="sel1">
+    				<option>9 px</option>
+    				<option>10 px</option>
+    				<option>11 px</option>
+    				<option>12 px</option>
+ 				 </select>
+				</div>
+			</li>
+      		<li><div class="form-group">
+  				<label for="sel1">Couleur:</label>
+    				<input type="color" name="favcolor" value="#ffff"></option>
+    			</div></li>
+      		<li><div class="form-group">
+  				<label for="sel1">Police:</label>
+  				<select class="form-control-md" id="sel1">
+    				<option>Arial</option>
+    				<option>Time New Roman</option>
+    				<option>Calibri</option>
+    				<option>Cambria</option>
+ 				 </select>
+				</div>
+      		<button type="reset" class="btn" value="effacer">Effacer</button>
+      	<ul>
+      	<div id="drawbox">
+ 			
+      	</div>
+      </body>
+      <script type="text/javascript">
+      	//Déclarer les couleurs
+      	var blue = '#009AFF';
+      	var red =  '#D21328';
+      	var green = '#44DF76';
+      	var orange = '#E96C31';
+
+      	//Se placer dans la zone de dessin
+      	var paintbox = document.getElementById('drawbox');
+      	// console.log(paintbox);
+
+      	//Définir un axe x,y
+      	function Draw(event) {
+      		console.log(event);
+      		console.log('Drawbox is here');
+
+      		//Créer les deux axes
+      		var x = document.createElement('div');
+      		x.id = 'bottom';
+      		
+      		//Style 
+      		x.style.width = '20px';
+      		x.style.height = '20px';
+      		x.style.borderRadius='25%';
+      		x.style.border = 'dotted 2px';
+      		x.style.color = x.blue;
+
+      		console.log(x);
+      		document.getElementById('drawbox').appendChild(x);
+
+      		var y = document.createElement('div');
+      		y.id = 'top';
+
+      		y.style.width = '20px';
+      		y.style.height = '20px';
+      		y.style.borderRadius='25%';
+      		y.style.border = 'dotted 2px'; 
+      		console.log(y);
+      		document.getElementById('drawbox').appendChild(y);
+
+      	}
+
+      	paintbox.addEventListener('click', Draw);
+
+      	//Récupèrer les axes
+      	var x_bloc = document.getElementById('bottom');
+  	    console.log(x_bloc);
+
+      	var y_bloc = document.getElementById('top');
+      	// console.log('In y_bloc');
+      	console.log(y_bloc);
+
+      	function DrawAgain() {
+      	// console.log(x_bloc);
+      	// var document.querySelector('div.id');
+
+      	//on récupère les coordonnées au click sur x,y
+      	// var coordX = x.clientX;
+      	// console.log(coordX);
+
+      	// var coordY = y.clientX;
+      	// console.log(coordY);
+
+      	// var coordXY = "X coords: " + x + ", Y coords: " + y;
+      	// document.getElementById("drawbox").innerHTML = coordXY;
+
+      	// var coords = x.event.clientX + y.event.clientY;
+      	// console.log(coords);
+     	
+     	var h = document.querySelectorAll( ":hover" );
+     	console.log(h);
+
+      	}	
+      	
+      	document.addEventListener('click', DrawAgain);
+
+
+      	function getClickPosition(e) {
+
+      	var box = document.getElementById('drawbox');
+
+    	var xPosition = e.clientX;
+    	console.log(xPosition);
+    	var yPosition = e.clientY;
+    	console.log(yPosition);
+		
+
+		box.addEventListener("mousemove", getClickPosition, false);}
+
+
+
+
+      	//Fonctions événementielles click + push (pour dessiner)
+
+
+
+      </script>
+</html>

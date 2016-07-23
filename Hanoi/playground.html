@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>Playground tp</title>
+            <link rel="stylesheet" type="text/css" href="assets/css/playground.css">
+             <meta name="viewport" content="width=device-width, initial-scale=1">
+  			<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  			<!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+      </head>
+      <body>
+      		<div id="playground">
+
+      		</div>
+      </body>
+      <script type="text/javascript">
+            /*That's keycodes for each arrow key;
+            left = 37
+            up = 38
+            right = 39
+            down = 40
+            */
+
+      	var playbox = document.getElementById('playground');
+      	var pressed = false;
+      	var keysup = false;
+      	var keysdown = false;
+      	var keyspress = false;
+
+            var atTop = event.keyCode('')
+
+      	//Listen to user pressing key so KEYPRESS
+      	playbox.addEventListener('keypress', function(event){
+      		keyspress = true;
+      		// console.log('Pressing');
+                  if(keyspress){
+                        mover(event.clientX)
+                  }
+      	});
+
+      	//Listen to user pressing key so KEYDOWN
+      	playbox.addEventListener('keydown', function(event){
+      		keysdown = true;
+      		// console.log('Downed');
+      	});
+
+      	//Listen to user releasing key so KEYUP
+		playbox.addEventListener('keyup', function(event){
+			keysup = true;
+			console.log('Released');
+      	});
+
+
+            /////////////////////////////
+
+
+
+
+      	function Personnage(){
+      		console.log("Hey I'm here !");
+
+      	var mover = document.createElement('img');
+      	mover.class = 'imagequibouge';
+      	mover.src = 'https://pbs.twimg.com/profile_images/125275267/pikachu_normal.jpg';
+
+      	document.getElementById('playground').appendChild(mover);
+      	console.log(mover);
+
+      	}
+
+      	playbox.addEventListener("click", Personnage);
+
+
+      </script>
+</html>

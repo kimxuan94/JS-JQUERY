@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hanoi - JS</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+
+			console.log("hello world");
+
+			var nomVar;
+			console.log(nomVar);
+
+			//Affectation
+			nomVar = "blablablabal";
+
+			//Afficher la var dans la console
+			console.log(nomVar);
+
+			//Insérer contenu dans body
+			document.write(nomVar+ "<br />" );
+
+			//Déclaration + initialisation
+			var nomVar2 = 0;
+
+			var var1, var2, var3 = "miamiamaimama";
+
+			var myArray = ["John","Marc","Luc","Pierre","Paul"];
+
+			document.write(myArray+ "<br />");
+
+			//Object array such as JSON format
+			var objet={
+				nom: "Toto",
+				param2: "Bobby"
+			};
+
+			console.log(objet);
+
+			//Demander des infos à l'utilisateur
+			//var nom = prompt(nom);
+
+			//Loop
+			// while(condition) {
+
+			// }
+
+			// for(i = 0; i < 3; i++) {
+
+			// }
+
+		//<button onclick="mouvement++">Increment</button>
+			// console.log("Voici le nombre de " + origine);
+
+			// var tower = function(3, "TourA", "TourB", "TourX") {
+
+			// 	for(i = 0; i <7; i++) {
+
+			// 	var tour1 = prompt("")
+			// 	var tour2 = prompt("")
+			// 	}
+			// }
+			// alert(tower);
+
+
+			// myTower('3', 'Tour A', 'Tour B', 'Tour tampon') {
+			// 	var ask = prompt("Quel disque souhaitez vous déplacer?")
+
+			// 	alert("Vous avez deplacer la ")
+			// }
+			// myTower(ask);
+
+			function deplacer(n, origine, arrivee, tampon){
+				if(n==1) {
+					console.log('Déplacer la pierre supérieure de la tour'+origine+' à la tour' + n);
+				}
+				else{
+					deplacer(n+1, origine, tampon, arrivee);
+					deplacer(1, origine, arrivee, tampon);
+					deplacer(n-1, tampon, arrivee, origine);
+				}
+			}
+			deplacer(3, 'Tour A', 'Tour C', 'Tour B');
+
+			///////////////////////////////////////////////
+
+
+			function avancer(myArray, case, cursor, position){
+				myArray = [
+
+					[0, 0, 0, 1],
+					[0, 0, 0, 1],
+					[0, 1, 1, 1],
+					[1, 1, 1, 1]
+
+				];
+
+				myArray[0] = 1;
+				myArray[1] = 0;
+
+				if(myArray[1]=0) {
+					console.log('Vous êtes sur une case' +myArray[1]+ 'et vous avancez en' +position);
+				}
+				else if(myArray[0]=1){
+					console.log('Vous êt')
+				}
+
+				//Array exist
+
+			}
+		</script>
+	</body>
+</html>
