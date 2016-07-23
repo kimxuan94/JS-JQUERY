@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ma première appli jQuery</title>
+    <script type="text/javascript" src="jquery-3.0.0.js">
+
+    </script>
+  </head>
+  <body>
+    <div class="ecran">
+
+    </div>
+    <!-- <div class ="buttons">
+      DEPART
+    </div> -->
+    <table class="table">
+      <thead>
+        <tr>
+<!-- 						<div class="screen"></div>
+-->      					</tr>
+      </thead>
+
+        <tbody>
+<!--       						<div class="col-sm-4">
+-->
+<!--       						</div>
+-->
+      <tr class="bo">
+          <td class="col-sm-2" id="on"><button>AC</button></td>
+          <td class="col-sm-2"><button>+/-</button></td>
+          <td class="col-sm-2"><button>%</button></td>
+          <td class="col-sm-2"><button>/</button></td>
+        </tr>
+        <tr class="bo">
+
+          <td class="col-sm-2"><button>7</button></td>
+          <td class="col-sm-2"><button>8</button></td>
+          <td class="col-sm-2"><button>9</button></td>
+          <td class="col-sm-2"><button>*</button></td>
+        </tr>
+         <tr class="bo">
+
+          <td class="col-sm-2"><button>4</button></td>
+          <td class="col-sm-2"><button>5</button></td>
+          <td class="col-sm-2"><button>6</button></td>
+          <td class="col-sm-2"><button>-</button></td>
+        </tr>
+        <tr class="bo">
+          <td class="col-sm-2"><button>1</button></td>
+          <td class="col-sm-2"><button>2</button></td>
+          <td class="col-sm-2"><button>3</button></td>
+          <td class="col-sm-2"><button>+</button></td>
+        </tr>
+         <tr class="bo">
+          <td class="col-sm-2"><button>0</button></td>
+          <td class="col-sm-2"><button>.</button></td>
+          <td class="col-sm-2"><button>=</button></td>
+          <td class="col-sm-2"></td>
+        </tr>
+    </tbody>
+    </table>
+
+
+    <script type="text/javascript">
+      // attendre que le DOM soit complètement chargé
+      $(function(){
+        // on selectionne les boutons, puis pour chacun on execute le code après
+        $('button').each(function(index){
+
+          // on ajoute un eventListener sur chacun des boutons
+          $(this).click(function(event){
+            if(this.innerHTML == 'AC'){
+              $('.ecran').text('');
+            }
+            else if(this.innerHTML == '='){
+              $('.ecran').text(eval($('.ecran').text()))
+            }
+            else {
+                var valPrecedente = $('.ecran').text();
+                $('.ecran').text(valPrecedente + this.innerHTML);
+            }
+          })
+        })
+      });
+
+    </script>
+  </body>
+</html>

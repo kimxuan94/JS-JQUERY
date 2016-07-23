@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>FloodFill</title>
+            <link rel="stylesheet" type="text/css" href="assets/css/calc.css">
+             <meta name="viewport" content="width=device-width, initial-scale=1">
+  			<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+ 			 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  			<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      </head>
+      <body>
+      		<div class="container">
+
+      			<div id="screen"><span id="init"></span></div>
+
+      			<!-- <div class ="buttons">
+      				DEPART
+      			</div> -->
+      			<table class="table">
+      				<thead>
+      					<tr>
+<!-- 						<div class="screen"></div>
+ -->      					</tr>
+      				</thead>
+
+      					<tbody>
+<!--       						<div class="col-sm-4">
+ -->
+<!--       						</div>
+ -->
+ 							<tr class="bo">
+      						<td class="col-sm-2" id="on"><button>AC</button></td>
+      						<td class="col-sm-2"><button>+/-</button></td>
+      						<td class="col-sm-2"><button>%</button></td>
+      						<td class="col-sm-2"><button>/</button></td>
+      					</tr>
+      					<tr class="bo">
+
+      						<td class="col-sm-2"><button>7</button></td>
+      						<td class="col-sm-2"><button>8</button></td>
+      						<td class="col-sm-2"><button>9</button></td>
+      						<td class="col-sm-2"><button>*</button></td>
+      					</tr>
+      					 <tr class="bo">
+
+      						<td class="col-sm-2"><button>4</button></td>
+      						<td class="col-sm-2"><button>5</button></td>
+      						<td class="col-sm-2"><button>6</button></td>
+      						<td class="col-sm-2"><button>-</button></td>
+      					</tr>
+      					<tr class="bo">
+      						<td class="col-sm-2"><button>1</button></td>
+      						<td class="col-sm-2"><button>2</button></td>
+      						<td class="col-sm-2"><button>3</button></td>
+      						<td class="col-sm-2"><button>+</button></td>
+      					</tr>
+      					 <tr class="bo">
+      						<td class="col-sm-2"><button>0</button></td>
+      						<td class="col-sm-2"><button>.</button></td>
+      						<td class="col-sm-2"><button>=</button></td>
+      						<td class="col-sm-2"></td>
+      					</tr>
+      			</tbody>
+      			</table>
+      		</div>
+
+                  <script type="text/javascript">
+                        var buttons = document.getElementsByTagName('button');
+
+                        function clicBouton(event){
+                              console.log(event);
+                              var ecran = document.getElementById('init');
+                              console.log(ecran);
+
+
+
+                              if(event.target.textContent == "AC"){
+                                    ecran.innerHTML = "";
+                              }
+                              else if(event.target.textContent == "="){
+                                    var result = eval(ecran.innerHTML);
+                                    ecran.innerHTML = result;
+                              }
+                              else {
+                                    ecran.innerHTML = ecran.innerHTML +  event.target.textContent;
+                              }
+
+                        }
+                        for(var i = 0; i<buttons.length; i++){
+                              buttons[i].addEventListener("click", clicBouton);
+                        }
+                  </script>
+      </body>
+</html>

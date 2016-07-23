@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>Paint</title>
+            <link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
+      </head>
+      <body>
+            <select class="taille" name="">
+                  <option value="1px">1px</option>
+                  <option value="2px">2px</option>
+                  <option value="4px">4px</option>
+                  <option value="8px">8px</option>
+                  <option value="16px">16px</option>
+            </select>
+            <input type="color" name="name" class="color" value="">
+            <select class="type" name="">
+                  <option value="carre">carre</option>
+                  <option value="rond">rond</option>
+            </select>
+            <button type="button" name="button" class="clear">Clear</button>
+            <div class="ecran">
+
+            </div>
+            <script type="text/javascript">
+                  var selectTaille = document.querySelector('.taille');
+                  var selectType = document.querySelector('.type');
+                  var selectColor =  document.querySelector('.color');
+                  var btnClear = document.querySelector('.clear');
+
+                  var taille = selectTaille.value;
+                  var type = selectType.value;
+                  var color = selectColor.value;
+
+                  var ecran = document.querySelector('.ecran');
+                  var pressed = false;
+
+                  btnClear.addEventListener('click', function(event){
+                        ecran.innerHTML = '';
+                  });
+                  selectTaille.addEventListener('change', function(event){
+                        taille = selectTaille.value;
+                  });
+                  selectType.addEventListener('change', function(event){
+                        type = selectType.value;
+                  });
+                  selectColor.addEventListener('change', function(event){
+                        color = selectColor.value;
+                  });
+
+                  ecran.addEventListener('mousedown', function(event){
+                        //console.log('mousedown');
+                        pressed = true;
+                  });
+                  ecran.addEventListener('mouseup', function(event){
+                        //console.log('mouseup');
+                        pressed = false;
+                  });
+                  ecran.addEventListener('mousemove', function(event){
+                        if(pressed){
+                              //console.log(event);
+                              dessin(event.clientX, event.clientY);
+                        }
+                  });
+                  ecran.addEventListener('click', function(event){
+                        //console.log(event);
+                  });
+
+                  function dessin(x, y){
+                        var pixel = document.createElement('div');
+
+                        pixel.style.width = taille;
+                        pixel.style.height = taille;
+                        pixel.style.backgroundColor = color;
+
+                        pixel.style.top = y + 'px';
+                        pixel.style.left = x + 'px';
+                        pixel.style.position = "absolute";
+                        pixel.style.zIndex = 9999;
+
+                        if(type == "rond"){
+                              pixel.style.borderRadius = "50%";
+                        }
+
+                        ecran.appendChild(pixel);
+                  }
+
+
+            </script>
+      </body>
+</html>

@@ -1,0 +1,39 @@
+#horloge {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background-image: url(../img/bg_horloge.jpg);
+    /*background-repeat: no-repeat;*/
+    -webkit-background-size: contain;
+    background-size: contain;
+}
+#secondes {
+    position: absolute;
+    top: 299px;
+    left: 299px;
+    height: 3px;
+    width: 180px;
+    background-color: #000;
+    transform-origin: top left;
+    transform: rotate(-90deg);
+}
+#minutes {
+    position: absolute;
+    top: 298px;
+    left: 298px;
+    height: 5px;
+    width: 140px;
+    background-color: #513eff;
+    transform-origin: top left;
+    transform: rotate(-90deg);
+}
+#heures {
+    position: absolute;
+    top: 297px;
+    left: 297px;
+    height: 7px;
+    width: 100px;
+    background-color: #ff493f;
+    transform-origin: top left;
+    transform: rotate(-90deg);
+}

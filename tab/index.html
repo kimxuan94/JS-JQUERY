@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>Système d'onglet</title>
+
+
+      </head>
+      <body>
+            <ul>
+                  <li><a href="#tab1" class="buttonTab">tab1</a></li>
+                  <li><a href="#tab2" class="buttonTab">tab2</a></li>
+                  <li><a href="#tab3" class="buttonTab">tab3</a></li>
+            </ul>
+            <p id="tab1" style="display: none" class="contentTab">
+                  Onglet 1
+            </p>
+            <p id="tab2" style="display: none" class="contentTab">
+                  Onglet 2
+            </p>
+            <p id="tab3" style="display: none" class="contentTab">
+                  Onglet 3
+            </p>
+
+            <script type="text/javascript">
+                  var buttons = document.getElementsByClassName('buttonTab');
+
+                  for(var i = 0; i < buttons.length; i++){
+                        buttons[i].addEventListener("click", changeTab)
+                  }
+
+                  function changeTab(event){
+                        var idTarget = event.target.hash;
+
+                        var pTarget = document.querySelector(idTarget);
+                        hideAllTabs();
+                        pTarget.style.display = "block";
+                  }
+
+                  function hideAllTabs(){
+                        var tabs = document.getElementsByClassName('contentTab');
+                        for(var i = 0; i < tabs.length; i++){
+                              tabs[i].style.display = "none";
+                        }
+                  }
+            </script>
+      </body>
+</html>

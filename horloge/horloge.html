@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Horlorge</title>
+    <link rel="stylesheet" href="css/horloge.css">
+</head>
+<body>
+
+<div id="horloge">
+    <div id="heures"></div>
+    <div id="minutes"></div>
+    <div id="secondes"></div>
+</div>
+
+<script>
+    var horloge = document.getElementById("horloge");
+    var heures = document.getElementById("heures");
+    var minutes = document.getElementById("minutes");
+    var secondes = document.getElementById("secondes");
+
+    var date = new Date();
+    var min = date.getMinutes();
+    var hr = date.getHours();
+    var sec = date.getSeconds();
+
+
+
+    var interval_secondes = 1000;
+    var rotation_secondes = 6;
+    var position_secondes = -90 + rotation_secondes*sec;
+
+    var interval_minutes = 1000 * 60;
+    var rotation_minutes = 6;
+    var position_minutes = -90 + rotation_minutes*min;
+
+
+    var interval_heures = 1000 * 60 * 12;
+    var rotation_heures = 30;
+    var position_heures = -90 + rotation_heures*hr;
+    console.log(position_heures);
+
+    secondes.style.transform = "rotate(" + position_secondes + "deg)";
+    minutes.style.transform = "rotate(" + position_minutes + "deg)";
+    heures.style.transform = "rotate(" + position_heures + "deg)";
+    // gestion de l'horloge des secondes
+    setInterval(function() {
+        position_secondes += rotation_secondes;
+        secondes.style.transform = "rotate(" + position_secondes + "deg)";
+    },interval_secondes);
+
+    // gestion de l'horloge des minutes
+    setInterval(function() {
+        position_minutes += rotation_minutes;
+        minutes.style.transform = "rotate(" + position_minutes + "deg)";
+    },interval_minutes);
+
+    // gestion de l'horloge des heures
+    setInterval(function() {
+        position_heures += rotation_heures;
+        heures.style.transform = "rotate(" + position_heures + "deg)";
+    },interval_heures)
+
+</script>
+
+</body>
+</html>
